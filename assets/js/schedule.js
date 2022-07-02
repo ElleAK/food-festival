@@ -2,6 +2,7 @@ require("bootstrap");
 const createEl = require("./domMethods");
 const { createLoremIpsum, dateConverter } = require("./helpers");
 
+$(document).ready(function() {
 if (window.location.href.indexOf("schedule") > -1) {
 
     const date = new Date();
@@ -10,7 +11,6 @@ if (window.location.href.indexOf("schedule") > -1) {
     const y = date.getFullYear();
 
     function onEventClick(calEvent) {
-
     const start = dateConverter(calEvent.start);
     localStorage.setItem("currentEvent", JSON.stringify({
         title: calEvent.title,
@@ -20,7 +20,6 @@ if (window.location.href.indexOf("schedule") > -1) {
     }))
     
     window.location.href = "events.html"
-
     }
 
     const events = [
@@ -121,10 +120,5 @@ if (window.location.href.indexOf("schedule") > -1) {
     pageEl.appendChild(containerEl2);
     pageEl.appendChild(containerEl3);
   }
+});
 
-
-    const purchaseBtn = document.getElementById("purchaseBtn");
-    const purchaseEmail = document.getElementById("purchaseEmail");
-    const modalEl = document.querySelector(".modal-content");
-    const modalBodyEl = document.querySelector(".modal-body");
-    const modalFooterEl = document.querySelector(".modal-footer");
