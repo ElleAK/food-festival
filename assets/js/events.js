@@ -1,6 +1,5 @@
 require("bootstrap");
 const createEl = require("./domMethods");
-const createLoremIpsum = require("./helpers");
 
 if (window.location.href.indexOf("event") > -1) {
     const currentEvent = JSON.parse(localStorage.getItem("currentEvent")) || {
@@ -20,10 +19,8 @@ if (window.location.href.indexOf("event") > -1) {
           createEl("p", {class: "card-text mt-3"}, currentEvent.description || createLoremIpsum(100)),
           createEl("a", {class: "btn btn-primary", href: "tickets.html"}, "Buy Tickets")
         )
-      ),
-      
+      ), 
     )
-    
 
     pageEl.appendChild(containerEl)
   }

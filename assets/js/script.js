@@ -1,8 +1,9 @@
 require('bootstrap');
-const img1 = require("../../assets/img/food-table.jpg");
-const img2 = require("../../assets/img/grill.jpg");
+const img1 = require("../img/food-table.jpg");
+const img2 = require("../img/grill.jpg");
 
   // First image is hard coded in index.html
+  $(document).ready(function() {
   const carouselSlides = [
     {
       title: "We travel all over the US",
@@ -18,9 +19,7 @@ const img2 = require("../../assets/img/grill.jpg");
       btnText: "Purchase Tickets",
       btnUrl: "tickets.html"
     },
-  ]
-
-  if (window.location.href.indexOf("index") > -1) {
+  ];
 
     carouselSlides.forEach((slide, i) => {
       $('.carousel-inner').append(`
@@ -42,5 +41,5 @@ const img2 = require("../../assets/img/grill.jpg");
       </div>
     </div>`)
     })
-  }
+  });
 
